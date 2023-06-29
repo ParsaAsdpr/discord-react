@@ -1,0 +1,92 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; 
+
+body{
+  background-color: #31343a;
+}
+
+.side-icon{
+  border-radius: 100%;
+}
+.side-icon.active{
+  border-radius: 1rem;
+}
+.side-icon:hover{
+  border-radius: 1rem;
+}
+
+.side-icon svg{
+  fill: #3BA55D
+}
+.side-icon.active svg{
+  fill: #fff
+}
+.side-icon:hover svg{
+  fill: #fff
+}
+
+.dms-button *{
+  color: #a5a5a5;
+}
+.dms-button:hover *{
+  color: #eee;
+}
+.dms-button.active *{
+  color: #eee;
+}
+
+.frs svg{
+  color: #a5a5a5;
+}
+.frs:hover svg{
+  color: #eee;
+}
+
+.channel-browser{
+  border: 1px solid #ffffff1c;
+  border-left: none;
+  border-right: none;
+}
+
+.default-color{
+  color: hsl(214 calc(1*8.1%)61.2%/1);
+}
+
+.channel-button:hover > svg{
+  display: block;
+}
+
+.tag-bg{
+  color: hsl(235 calc(1*86.2%)88.6%/1);
+  background-color: hsl(235 calc(1*85.6%)64.7%/0.3);
+}
+
+
+.chat-screen{
+  scroll-behavior: inherit;
+  margin-top: 1px;
+}
+.chat-screen::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 100px 100px;
+}
+
+/* Track */
+.chat-screen::-webkit-scrollbar-track {
+  background: #2d2f33;
+  border-radius: 100px 100px;
+  margin-top: 5px;
+}
+
+/* Handle */
+.chat-screen::-webkit-scrollbar-thumb {
+  background: #1f1f1f;
+  border-radius: 100px 100px;
+}
+
+/* Handle on hover */
+.chat-screen::-webkit-scrollbar-thumb:hover {
+  background: #1f1f1f;
+  border-radius: 100px 100px;
+}
