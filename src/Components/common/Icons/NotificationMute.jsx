@@ -5,8 +5,8 @@ const NotificationMute = () => {
     <svg
       x="0"
       y="0"
-      class="icon-2xnN2Y"
-      aria-hidden="true"
+      className="icon-2xnN2Y"
+      ariaHidden="true"
       role="img"
       width="24"
       height="24"

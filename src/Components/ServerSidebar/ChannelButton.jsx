@@ -19,7 +19,7 @@ const ChannelButton = ({ channelName }) => {
         <p className={`${isActive && "text-white"}`}>{channelName}</p>
       </div>
       <svg
-        class={`${isActive ? 'block' : 'hidden'} cursor-pointer default-color hover:text-slate-300`}
+        className={`${isActive ? 'block' : 'hidden'} cursor-pointer default-color hover:text-slate-300`}
         aria-hidden="true"
         role="img"
         width="16"

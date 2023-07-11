@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RightSide = ({icon, url}) => {
     return (
-        <a href={url} className='frs'>
+        <Link to={url} className='frs'>
             {icon}
-        </a>
+        </Link>
     );
 };
 

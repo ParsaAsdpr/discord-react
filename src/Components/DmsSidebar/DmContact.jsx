@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DmContact = ({ name, avatar }) => {
   const [isActive, setActive] = React.useState(false);
@@ -7,8 +8,8 @@ const DmContact = ({ name, avatar }) => {
   };
   return (
     <div className="w-full">
-      <a
-        href="/"
+      <Link
+        to="/"
         className={`${
           isActive ? "active bg-[#4f545c99]" : ""
         } py-1.5 px-3 items-center flex flex-row gap-4 hover:bg-[#4f545c69] w-full rounded-md text-stone-100 font-medium dms-button`}
@@ -24,7 +25,7 @@ const DmContact = ({ name, avatar }) => {
         <p className="overflow-ellipsis whitespace-nowrap overflow-hidden w-3/4">
           {name}
         </p>
-      </a>
+      </Link>
     </div>
   );
 };

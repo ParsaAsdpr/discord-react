@@ -20,7 +20,7 @@ const ChannelList = ({ categoryName, channels }) => {
         {categoryName.toUpperCase()}
       </div>
       {channels.map(channel => (
-        <ChannelButton channelName={channel.name} />
+        <ChannelButton channelName={channel.name} key={channel._id} />
       ))}
     </ul>
   );

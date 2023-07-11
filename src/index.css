@@ -90,3 +90,12 @@ body{
   background: #1f1f1f;
   border-radius: 100px 100px;
 }
+
+.miniprofile-avatar:hover > .miniprofile-overlay{
+  display: flex;
+}
+
+.triangle{
+  border-width: 7.5px 10px 7.5px 0;
+  border-color: transparent #141414 transparent transparent;
+}

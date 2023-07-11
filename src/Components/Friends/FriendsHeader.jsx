@@ -5,6 +5,7 @@ import InboxIcon from "../common/Icons/InboxIcon";
 import NewGroupIcon from "../common/Icons/NewGroupIcon";
 import FriendsTab from "./FriendsTab";
 import RightSide from "./RightSide";
+import { Link } from "react-router-dom";
 
 const FriendsHeader = () => {
   return (
@@ -18,12 +19,12 @@ const FriendsHeader = () => {
         <FriendsTab text="All" url="#" />
         <FriendsTab text="Pending" url="#" />
         <FriendsTab text="Blocked" url="#" />
-        <a
+        <Link
           className="px-2 rounded-[0.25rem] bg-[#2D7D46] text-[#eee] font-medium"
-          href="/"
+          to="/"
         >
           Add Friend
-        </a>
+        </Link>
       </div>
       <div className="flex flex-row gap-4">
         <div className="pr-4 border-r border-r-stone-300 border-opacity-20">

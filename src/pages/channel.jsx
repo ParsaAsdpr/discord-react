@@ -30,7 +30,7 @@ export default function Channel(props) {
               <ChatScreen></ChatScreen>
               <TextBox channelName={"community"} />
             </div>
-            <MembersList />
+            <MembersList serverID={serverID} />
           </div>
         </div>
       </div>

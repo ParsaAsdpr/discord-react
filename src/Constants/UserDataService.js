@@ -12,7 +12,7 @@ export const UserData = {
       _id: "322846109712252928",
       name: "Forward Assault",
       icon: "/Avatars/ForwardAssault.jpg",
-      defaultChannel: { _id: "839594470890143754", name: "community" },
+      defaultChannel: { _id: "322846109712252928", name: "community" },
     },
     {
       _id: "607525914607091712",

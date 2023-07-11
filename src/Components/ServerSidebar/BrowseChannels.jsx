@@ -7,7 +7,7 @@ const BrowseChannels = () => {
         className="text-[14.5px] items-center flex gap-1 px-2 rounded-md py-1.5 default-color hover:bg-[#383a3f] hover:text-slate-200 cursor-pointer "
       >
         <svg
-          class="icon-2W8DHg"
+          className="icon-2W8DHg"
           aria-hidden="true"
           role="img"
           width="20"

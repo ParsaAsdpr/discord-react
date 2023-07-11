@@ -3,7 +3,7 @@ import ServerInfo from "./ServerInfo";
 import BoostGoal from "./BoostGoal";
 import BrowseChannels from "./BrowseChannels";
 import ChannelList from "./ChannelList";
-import { getCategoryChannels, getServerCategories } from "../../Constants/ServerCategories";
+import { getCategoryChannels, getServerCategories } from "../../Constants/ServerCategoriesService";
 
 const ServerSidebar = ({
   children,
@@ -30,7 +30,7 @@ const ServerSidebar = ({
         <BrowseChannels />
       </div>
       {categories.map(category => (
-        <ChannelList categoryName={category.name} channels={getCategoryChannels(category._id)} />
+        <ChannelList categoryName={category.name} channels={getCategoryChannels(category._id)} key={category._id} />
       ))}
     </div>
   );
