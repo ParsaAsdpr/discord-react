@@ -22,7 +22,7 @@ const ServerSidebar = ({
           serverName={serverName}
           isDiscoerable={isDiscoerable}
         />
-        <div className="mt-3">
+        <div className="mt-8">
           <BoostGoal boosters={boosters} />
         </div>
       </div>

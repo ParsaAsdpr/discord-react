@@ -21,7 +21,6 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
   function toggleModal(e) {
     setIsOpen(!isOpen);
     setTop(refr.current.offsetTop);
-    console.log(user);
   }
 
   const [contextMneu, setContextMenu] = useState(initialContextMenu);
@@ -67,6 +66,8 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
                 aboutMe={user.about}
                 user={user}
                 created={user.created}
+                servers={user.servers}
+                friends={user.friends}
                 onProfileClick={handleProfileClicked}
               ></MiniProfile>
               <div
@@ -97,6 +98,7 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
             tag={user.tag}
             aboutMe={user.about}
             created={user.created}
+            id={user._id}
           />
           <div
             className={`w-screen h-screen fixed top-0 right-0 z-10 bg-black bg-opacity-80`}

@@ -11,6 +11,8 @@ const Sidebar = () => {
   const { activeGuild, setActiveGuild } = useState("1");
   const { servers } = useContext(UserContext);
 
+  console.log(servers)
+
 
   const onFriendsClick = () => {
     setActiveGuild("1")
@@ -32,7 +34,7 @@ const Sidebar = () => {
             activeGuild={activeGuild}
             key={server._id}
             serverName={server.name}
-            href={`/channels/${server._id}/${server.defaultChannel._id}`}
+            href={`/channels/${server._id}/${server.defaultChannel}`}
             serverAvatar={server.icon}
             activeServer={activeGuild}
             onServerClick={onServerClick}

@@ -5,7 +5,7 @@ import { RiSettings5Fill } from "react-icons/ri";
 import UserContext from "../../Context/UserContext";
 
 const ProfileBar = () => {
-  const { username, tag, status, customStatus, avatarURL } =
+  const { name, tag, status, customStatus, avatar } =
     useContext(UserContext);
   return (
     <div className="absolute bg-[#232428] right-0 translate-x-full w-[15rem] bottom-0 py-2.5 px-2 flex justify-between">
@@ -14,15 +14,15 @@ const ProfileBar = () => {
             <img
               className="rounded-full"
               alt="pfp"
-              src={avatarURL}
+              src={avatar}
               width={32}
               height={32}
             />
         </div>
         <div className="flex flex-col pl-2">
-          <p className="text-slate-100 font-bold text-[13px]">{username}</p>
+          <p className="text-slate-100 font-bold text-[13px]">{name}</p>
           <p className="text-[#bbbbbb] text-[10.5px] tracking-wider">
-            {username}#{tag}
+            {name}#{tag}
           </p>
         </div>
       </div>
