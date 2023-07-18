@@ -3,6 +3,7 @@ import FirstMessage from "./Message/FirstMessage";
 import SecondMessage from "./Message/SecondMessage";
 import DayDivider from "./Message/DayDivider";
 import { getMessages } from "../../Constants/ChannelsDataService";
+import moment from 'moment';
 
 const ChatScreen = ({ children }) => {
   
@@ -18,10 +19,12 @@ const ChatScreen = ({ children }) => {
     scrollToBottom();
   });
   
+  let now = moment().format("MMM Do YYYY");
+  console.log(now)
 
   return (
     <div className="w-full h-full relative overflow-hidden mb-2 pr-1">
-      <div className="w-full bottom-0 absolute chat-screen overflow-auto max-h-full pt-10">
+      <div className="w-full bottom-0 absolute big-scroll overflow-auto max-h-full pt-10">
         <DayDivider />
         {messages.map((message, index) => (
           <FirstMessage

@@ -2,6 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities"; 
 
+*{
+  -webkit-user-select: none;
+  -ms-user-select: none; 
+  user-select: none
+}
+
 body{
   background-color: #31343a;
 }
@@ -63,30 +69,30 @@ body{
 }
 
 
-.chat-screen{
+.big-scroll{
   scroll-behavior: inherit;
   margin-top: 1px;
 }
-.chat-screen::-webkit-scrollbar {
+.big-scroll::-webkit-scrollbar {
   width: 8px;
   border-radius: 100px 100px;
 }
 
 /* Track */
-.chat-screen::-webkit-scrollbar-track {
+.big-scroll::-webkit-scrollbar-track {
   background: #2d2f33;
   border-radius: 100px 100px;
   margin-top: 5px;
 }
 
 /* Handle */
-.chat-screen::-webkit-scrollbar-thumb {
+.big-scroll::-webkit-scrollbar-thumb {
   background: #1f1f1f;
   border-radius: 100px 100px;
 }
 
 /* Handle on hover */
-.chat-screen::-webkit-scrollbar-thumb:hover {
+.big-scroll::-webkit-scrollbar-thumb:hover {
   background: #1f1f1f;
   border-radius: 100px 100px;
 }
@@ -98,4 +104,12 @@ body{
 .triangle{
   border-width: 7.5px 10px 7.5px 0;
   border-color: transparent #141414 transparent transparent;
+}
+
+.profile-bar:hover > div > div > p:nth-of-type(1){
+  margin-top: -17px;
+}
+
+.friend:hover .friend-buttons > *{
+  background-color: #222222;
 }

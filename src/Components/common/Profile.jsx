@@ -141,7 +141,7 @@ const Profile = ({
                 <div className="flex flex-col h-64 overflow-y-auto">
                   {friends.length <= 0 ? (
                     <div className="flex flex-col justify-center items-center h-full">
-                      <img src="/nofriend.svg" alt="" className="h-auto w-50" />
+                      <img src="/nomutualfriend.svg" alt="" className="h-auto w-50" />
                       <p className="text-stone-300 text-[13px] pt-2">
                         NO FRIENDS IN COMMON
                       </p>

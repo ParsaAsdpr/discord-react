@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ChatScreen from "../Components/ChatScreen/ChatScreen";
 import ChatTopbar from "../Components/ChatScreen/ChatTopbar";
 import MembersList from "../Components/ChatScreen/MembersList";
@@ -17,7 +16,7 @@ export default function Channel(props) {
         <ServerSidebar
           serverName={server.name}
           isDiscoerable={server.isDiscoerable}
-          isVerified={server.isVerfieid}
+          isVerified={server.isVerified}
           boosters={server.boosters.length}
           serverID={serverID}
         ></ServerSidebar>

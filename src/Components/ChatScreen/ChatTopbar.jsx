@@ -2,7 +2,7 @@ import React from "react";
 import { BiHash } from "react-icons/bi";
 import Tag from "../common/Tag";
 import HelpIcon from "../common/Icons/HelpIcon";
-import RightSide from "../Friends/RightSide";
+import HeaderRightSide from "../Friends/HeaderRightSide";
 import InboxIcon from "../common/Icons/InboxIcon";
 import SearchDms from "../DmsSidebar/SearchDms";
 import ChatSearch from "./ChatSearch";
@@ -28,13 +28,13 @@ const ChatTopbar = () => {
         </div>
       </div>
       <div dir="rtl" className="flex items-center gap-4">
-        <RightSide url='#' icon={<HelpIcon />} />
-        <RightSide url='#' icon={<InboxIcon />} />
+        <HeaderRightSide url='#' icon={<HelpIcon />} />
+        <HeaderRightSide url='#' icon={<InboxIcon />} />
         <ChatSearch />
-        <RightSide url={'#'} icon={<MembersListIcon />} />
-        <RightSide url={'#'} icon={<BsPinAngleFill className="text-[22px]" />} />
-        <RightSide url={'#'} icon={<NotificationMute />} />
-        <RightSide url={'#'} icon={<Threats/>} />
+        <HeaderRightSide url={'#'} icon={<MembersListIcon />} />
+        <HeaderRightSide url={'#'} icon={<BsPinAngleFill className="text-[22px]" />} />
+        <HeaderRightSide url={'#'} icon={<NotificationMute />} />
+        <HeaderRightSide url={'#'} icon={<Threats/>} />
       </div>
     </div>
   );

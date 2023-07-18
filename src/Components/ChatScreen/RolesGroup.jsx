@@ -2,6 +2,8 @@ import React from "react";
 import MiniProfile from "../common/MiniProfile";
 import { getUser } from "../../Constants/MembersDataService";
 import Profile from "../common/Profile";
+import ProfilePicture from "../common/ProfilePicture";
+import Status from "../common/Status";
 
 const RolesGroup = ({ role, members, roles, roleColor }) => {
   const refr = React.useRef();
@@ -17,6 +19,7 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
     setTop(refr.current.offsetTop);
     setUserData(member);
     setUser(getUser(member._id));
+    console.log(member)
   }
 
   const handleProfileClicked = () => {
@@ -36,12 +39,13 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
           ref={refr}
           key={member._id}
         >
-          <span className="h-full">
+          <span className="h-full relative">
             <img
               className="rounded-full w-[32px] h-[32px]"
               alt="pfp"
               src={member.avatar}
             />
+            <Status status={member.status} className='top-[52%] -right-0.5' />
           </span>
           <div className="flex flex-col pl-1.5">
             <p

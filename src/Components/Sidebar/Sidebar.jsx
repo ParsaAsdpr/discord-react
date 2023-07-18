@@ -9,9 +9,7 @@ import UserContext from "../../Context/UserContext";
 
 const Sidebar = () => {
   const { activeGuild, setActiveGuild } = useState("1");
-  const { servers } = useContext(UserContext);
-
-  console.log(servers)
+  const user = useContext(UserContext);
 
 
   const onFriendsClick = () => {
@@ -29,7 +27,7 @@ const Sidebar = () => {
     <div className="h-screen relative p-3 w-[74px] bg-[#202225]">
       <FriendsButton activeGuild={activeGuild} onFriendsClick={onFriendsClick} />
       <div className="flex flex-col gap-2">
-        {servers.map((server) => (
+        {user.servers.map((server) => (
           <ServerButton
             activeGuild={activeGuild}
             key={server._id}
@@ -44,7 +42,7 @@ const Sidebar = () => {
         <ExploreServers />
         <DownloadApps />
       </div>
-      <ProfileBar />
+      <ProfileBar name={user.name} tag={user.tag} status={user.status} avatar={user.avatar} />
     </div>
   );
 };

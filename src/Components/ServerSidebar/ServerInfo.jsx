@@ -2,6 +2,7 @@ import React from "react";
 import { GoVerified } from "react-icons/go";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
+import VerifiedIcon from "../common/Icons/VerifiedIcon";
 
 const ServerInfo = ({ isVerified, serverName, isDiscoerable }) => {
   return (
@@ -10,9 +11,7 @@ const ServerInfo = ({ isVerified, serverName, isDiscoerable }) => {
         <div className="flex gap-1 items-center">
           {isVerified && (
             <div className="relative flex justify-center items-center">
-              <div className="absolute w-2 h-2 bg-white"></div>
-              <GoVerified className="text-[#41434A]" />
-              <GoVerified className="text-[#41434A] absolute top-0 left-0" />
+              <VerifiedIcon />
             </div>
           )}
 

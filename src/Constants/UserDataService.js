@@ -19,7 +19,7 @@ export const UserData = {
     {
       _id: "607525914607091712",
       name: "Parsatopia",
-      defaultChannel: "607525914607091712",
+      defaultChannel: "700465075277791282",
     },
     {
       _id: "850765380887773204",

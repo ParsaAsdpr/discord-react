@@ -42,13 +42,13 @@ const MiniProfile = ({
         </div>
         <div className="w-[330px] p-4 bg-[#232327] text-white pt-14">
           <div className="bg-[#111214] p-3 w-full rounded-lg">
-            <h2 className="text-slate-100 text-lg font-semibold">{username}</h2>
-            <p className="text-[12px] font-semibold text-slate-200 pb-3 border-b border-b-[#2c2c2c] mb-3">
+            <h2 className="text-slate-100 text-lg font-semibold select-text">{username}</h2>
+            <p className="text-[12px] font-semibold text-slate-200 pb-3 border-b border-b-[#2c2c2c] mb-3 select-text">
               {username}#{tag}
             </p>
             {aboutMe && (
               <MiniProfileSection title={"about me"}>
-                <p className="text-[14px] font-thin text-zinc-200 mb-3">
+                <p className="text-[14px] font-thin text-zinc-200 mb-3 select-text">
                   {aboutMe}
                 </p>
               </MiniProfileSection>
