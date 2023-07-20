@@ -80,8 +80,9 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
         <div className="flex flex-col">
           <div className="flex items-center">
             <p
-              className=" text-base leading-none pr-2.5"
-              style={{ color: roleColor }}
+              className=" text-base font-semibold leading-none pr-2.5 hover:underline cursor-pointer"
+              style={{ color: roleColor ? roleColor : "#eeeeee" }}
+              onClick={toggleModal}
             >
               {user.name}
             </p>

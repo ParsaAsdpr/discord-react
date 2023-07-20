@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DmContact = ({ name, avatar }) => {
+const DmContact = ({ name, avatar, id }) => {
   const [isActive, setActive] = React.useState(false);
   const handleClick = () => {
     setActive(!isActive);
@@ -9,7 +9,7 @@ const DmContact = ({ name, avatar }) => {
   return (
     <div className="w-full">
       <Link
-        to="/"
+        to={`/channels/@me/${id}`}
         className={`${
           isActive ? "active bg-[#4f545c99]" : ""
         } py-1.5 px-3 items-center flex flex-row gap-4 hover:bg-[#4f545c69] w-full rounded-md text-stone-100 font-medium dms-button`}

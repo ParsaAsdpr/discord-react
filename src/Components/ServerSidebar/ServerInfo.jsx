@@ -8,7 +8,7 @@ const ServerInfo = ({ isVerified, serverName, isDiscoerable }) => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-2.5 items-center">
           {isVerified && (
             <div className="relative flex justify-center items-center">
               <VerifiedIcon />

@@ -2,14 +2,10 @@ import React, { createRef, useEffect } from "react";
 import FirstMessage from "./Message/FirstMessage";
 import SecondMessage from "./Message/SecondMessage";
 import DayDivider from "./Message/DayDivider";
-import { getMessages } from "../../Constants/ChannelsDataService";
 import moment from 'moment';
 
-const ChatScreen = ({ children }) => {
+const ChatScreen = ({ children, messages }) => {
   
-  const channelID = window.location.toString().split('/').slice(-1).toString();
-  const messages = getMessages(channelID)
-
   const EndRef = createRef();
   const scrollToBottom = () => {
     EndRef.current.scrollIntoView();
@@ -23,7 +19,7 @@ const ChatScreen = ({ children }) => {
   console.log(now)
 
   return (
-    <div className="w-full h-full relative overflow-hidden mb-2 pr-1">
+    <div className="w-full h-full relative overflow-hidden mb-2 pr-1 z-10">
       <div className="w-full bottom-0 absolute big-scroll overflow-auto max-h-full pt-10">
         <DayDivider />
         {messages.map((message, index) => (

@@ -49,6 +49,33 @@ export const Members = [
     friends: [],
     isDeleted: false,
   },
+  {
+    _id: "1060500137115385886",
+    name: "Mehmet ❤ Asya",
+    tag: "3034",
+    avatar: "/Avatars/Mehmet ❤ Asya.png",
+    badges: [],
+    banner: null,
+    about: null,
+    created: "Jan 05, 2023",
+    roles: [
+      {
+        _id: "451615370793713665",
+        name: "discord moderators",
+        color: "#00ff07",
+      },
+    ],
+    servers: [
+      {
+        _id: "322846109712252928",
+        name: "Forward Assault",
+        icon: "/Avatars/ForwardAssault.jpg",
+        defaultChannel: "322846109712252928",
+      },
+    ],
+    friends: [],
+    isDeleted: false,
+  },
 ];
 
 export function getUsers() {

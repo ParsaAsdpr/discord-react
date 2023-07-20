@@ -29,13 +29,14 @@ const Sidebar = () => {
       <div className="flex flex-col gap-2">
         {user.servers.map((server) => (
           <ServerButton
-            activeGuild={activeGuild}
+            // activeGuild={activeGuild}
             key={server._id}
             serverName={server.name}
             href={`/channels/${server._id}/${server.defaultChannel}`}
             serverAvatar={server.icon}
-            activeServer={activeGuild}
+            // activeServer={activeGuild}
             onServerClick={onServerClick}
+            isVerified={server.isVerified}
           />
         ))}
         <AddServer />

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Tooltip from "../common/Tooltip";
 
-const ServerButton = ({ serverName, serverAvatar, href, onFriendsClick }) => {
+const ServerButton = ({ serverName, serverAvatar, href, onFriendsClick, isVerified }) => {
   const [isActive, setActive] = React.useState(false);
   const [IsShown, setIsShown] = React.useState(false);
   const handleClick = () => {
@@ -29,7 +29,7 @@ const ServerButton = ({ serverName, serverAvatar, href, onFriendsClick }) => {
       {isActive && (
         <span className="absolute top-[4px] -left-3 h-10 bg-white w-1 rounded-r-md"></span>
       )}
-      {IsShown && <Tooltip name={serverName} />}
+      {IsShown && <Tooltip name={serverName} isVerified={isVerified} />}
     </Link>
   ) : (
     <Link
@@ -43,12 +43,11 @@ const ServerButton = ({ serverName, serverAvatar, href, onFriendsClick }) => {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      
       {isActive && (
         <span className="absolute top-[4px] -left-3 h-10 bg-white w-1 rounded-r-md"></span>
       )}
       <p className="overflow-hidden">{words.map((i) => i.split("")[0])}</p>
-      {IsShown && <Tooltip name={serverName} />}
+      {IsShown && <Tooltip name={serverName} isVerified={isVerified} /> }
     </Link>
   );
 };
