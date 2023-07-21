@@ -53,7 +53,7 @@ export default function Channel(props) {
                 <ChatScreen channelID={channelID} messages={messages}></ChatScreen>
                 <TextBox channelName={"community"} />
               </div>
-              <DmProfileSidebar avatar={'/Avatars/Mehmet ❤ Asya.png'} username={'Mehmet ❤ Asya'} tag={'3034'} />
+              <DmProfileSidebar avatar={'/Avatars/Mehmet ❤ Asya.png'} username={'Mehmet ❤ Asya'} tag={'3034'} created={'Jan 05, 2023'} />
             </div>
           </div>
         </div>

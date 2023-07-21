@@ -1,6 +1,6 @@
 import React from "react";
 
-const DmProfileSidebar = ({ avatar, username, tag }) => {
+const DmProfileSidebar = ({ avatar, username, tag, created }) => {
   return (
     <div className="bg-[#232428] h-full relative">
       <div className="w-full h-[118px] bg-[#292814]"></div>
@@ -24,6 +24,21 @@ const DmProfileSidebar = ({ avatar, username, tag }) => {
             <p className="text-slate-300 text-[13px] select-text">
               {username}#{tag}
             </p>
+          </div>
+
+          <div className="flex flex-col py-3 border-b border-b-[#353535]">
+            <h2 className="text-slate-100 font-bold text-[11px]">
+              DISCORD MEMBER SINCE
+            </h2>
+            <p className="text-slate-300 text-sm select-text pt-1">{created}</p>
+          </div>
+
+          <div className="flex flex-col py-3">
+            <h3 className="text-[11px] text-slate-200 font-bold">NOTE</h3>
+            <textarea
+              className="bg-transparent text-zinc-300 text-[11px] pt-2 px-1 w-full resize-none outline-none"
+              placeholder="Click to add a note"
+            />
           </div>
         </div>
       </div>
