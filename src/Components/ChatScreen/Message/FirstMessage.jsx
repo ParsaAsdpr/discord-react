@@ -3,6 +3,7 @@ import ContextMenu from "../../common/ContextMenu";
 import MiniProfile from "../../common/MiniProfile";
 import { getUser } from "../../../Constants/MembersDataService";
 import Profile from "../../common/Profile";
+import MessageActions from "./MessageActions";
 
 const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
   const initialContextMenu = {
@@ -39,7 +40,7 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
 
   return (
     <div
-      className="mt-1 pl-4 hover:bg-[#00000010] py-1"
+      className="mt-1 pl-4 hover:bg-[#00000010] py-1 relative"
       onContextMenu={handleContextMenu}
     >
       {contextMneu.show && (
@@ -91,6 +92,7 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
           <p className="text-slate-300 text-[15px] pt-[1px]">{message}</p>
         </div>
       </div>
+      {/* <MessageActions /> */}
       {isProfileOpen && (
         <>
           <Profile

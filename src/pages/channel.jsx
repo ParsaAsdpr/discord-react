@@ -8,6 +8,7 @@ import { getMessages } from "../Constants/ChannelsDataService";
 import { getServer } from "../Constants/ServersDataService";
 import { useParams } from "react-router-dom";
 import { getDms } from "../Constants/UserDmsService";
+import DmProfileSidebar from "../Components/ChatScreen/DmProfileSidebar";
 
 export default function Channel(props) {
   const { serverID, channelID } = useParams();
@@ -52,7 +53,7 @@ export default function Channel(props) {
                 <ChatScreen channelID={channelID} messages={messages}></ChatScreen>
                 <TextBox channelName={"community"} />
               </div>
-              {/* <MembersList serverID={serverID} /> */}
+              <DmProfileSidebar avatar={'/Avatars/Mehmet ❤ Asya.png'} username={'Mehmet ❤ Asya'} tag={'3034'} />
             </div>
           </div>
         </div>

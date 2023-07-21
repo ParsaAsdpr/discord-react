@@ -103,8 +103,6 @@ export const ServersData = [
       },
     ],
     boosters: [
-      { _id: "823587546578944041", name: "Parsa" },
-      { _id: "823587546578944041", name: "Parsa" },
     ],
   },
   {
