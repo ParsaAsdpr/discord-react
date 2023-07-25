@@ -4,6 +4,8 @@ import MiniProfile from "../../common/MiniProfile";
 import { getUser } from "../../../Constants/MembersDataService";
 import Profile from "../../common/Profile";
 import MessageActions from "./MessageActions";
+import ProfilePicture from "../../common/ProfilePicture";
+import MessageContent from "./MessageContent";
 
 const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
   const initialContextMenu = {
@@ -52,23 +54,28 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
           onClick={toggleModal}
           ref={refr}
         >
-          <img
-            className="rounded-full cursor-pointer w-[40px] h-[40px]"
-            alt="pfp"
-            src={user.avatar}
+          <ProfilePicture
+            staticUrl={user.avatar}
+            dynamicUrl={user.dynamicAvatar}
+            width={40}
+            height={40}
           />
           {isOpen && (
             <>
               <MiniProfile
                 top={top - 50}
-                avatar={user.avatar}
-                username={user.name}
+                avatar={user.dynamicAvatar ? user.dynamicAvatar : user.avatar}
+                name={user.name}
+                username={user.username}
                 tag={user.tag}
                 aboutMe={user.about}
                 user={user}
                 created={user.created}
                 servers={user.servers}
                 friends={user.friends}
+                banner={user.banner}
+                bannerColor={user.bannerColor}
+                themeColor={user.themeColors}
                 onProfileClick={handleProfileClicked}
               ></MiniProfile>
               <div
@@ -78,7 +85,7 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
             </>
           )}
         </span>
-        <div className="flex flex-col">
+        <div className="flex flex-col select-text">
           <div className="flex items-center">
             <p
               className=" text-base font-semibold leading-none pr-2.5 hover:underline cursor-pointer"
@@ -89,19 +96,23 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
             </p>
             <p className="text-[11px] text-gray-400 pt-[2px]">{time}</p>
           </div>
-          <p className="text-slate-300 text-[15px] pt-[1px]">{message}</p>
+          <MessageContent message={message} attachment={attachment} />
         </div>
       </div>
       {/* <MessageActions /> */}
       {isProfileOpen && (
         <>
           <Profile
-            avatar={user.avatar}
-            username={user.name}
+            avatar={user.dynamicAvatar ? user.dynamicAvatar : user.avatar}
+            name={user.name}
+            username={user.username}
             tag={user.tag}
             aboutMe={user.about}
             created={user.created}
             id={user._id}
+            banner={user.banner}
+            bannerColor={user.bannerColor}
+            themeColor={user.themeColors}
           />
           <div
             className={`w-screen h-screen fixed top-0 right-0 z-10 bg-black bg-opacity-80`}

@@ -23,10 +23,10 @@ const DmsSidebar = () => {
 
       <div className="mt-2 px-2">
         <h3
-          className="flex px-3 cursor-default flex-row justify-between items-center text-[11px] text-[#96989D] hover:text-[#eeeeee] font-bold"
+          className="flex px-3 cursor-default flex-row justify-between items-center text-[11px] text-[#96989D] hover:text-[#dfdfdf] font-bold"
           style={{ letterSpacing: "0.8px" }}
         >
-          DIRECT MESSAGES <GoPlus className="text-sm" />
+          DIRECT MESSAGES <p className="text-2xl font-semibold leading-none -translate-y-0.5">+</p>
         </h3>
         <div className="flex flex-col mt-2 gap-0.5">
           {recentDms.map(dm => (

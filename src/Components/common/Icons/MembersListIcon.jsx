@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const MembersListIcon = () => {
   const [isActive, setActive] = useState(true);
-  let color;
   const handleClick = () => {
     // isActive ? '#eeeeee' : '#dddddd'
     setActive(!isActive)

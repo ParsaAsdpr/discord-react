@@ -9,13 +9,16 @@ import { getServer } from "../Constants/ServersDataService";
 import { useParams } from "react-router-dom";
 import { getDms } from "../Constants/UserDmsService";
 import DmProfileSidebar from "../Components/ChatScreen/DmProfileSidebar";
+import { getUser } from "../Constants/MembersDataService";
 
 export default function Channel(props) {
   const { serverID, channelID } = useParams();
+  const user = getUser(channelID);
 
   const server = getServer(serverID);
 
-  const messages = serverID !== "@me" ? getMessages(channelID) : getDms(channelID);
+  const messages =
+    serverID !== "@me" ? getMessages(channelID) : getDms(channelID);
 
   return (
     <>
@@ -34,7 +37,10 @@ export default function Channel(props) {
             </div>
             <div className="flex h-full overflow-hidden">
               <div className="w-full h-full flex flex-col pr-1">
-                <ChatScreen channelID={channelID} messages={messages}></ChatScreen>
+                <ChatScreen
+                  channelID={channelID}
+                  messages={messages}
+                ></ChatScreen>
                 <TextBox channelName={"community"} />
               </div>
               <MembersList serverID={serverID} />
@@ -42,18 +48,30 @@ export default function Channel(props) {
           </div>
         </div>
       ) : (
-        <div className="flex ">
+        <div className="flex w-full">
           <DmsSidebar />
           <div className="flex flex-col w-full h-screen">
             <div className="w-full">
-              <ChatTopbar channelName="community" />
+              <ChatTopbar isDM channelName={user.name} channelIcon={user.avatar} channelDynamicIcon={user.dynamicAvatar} />
             </div>
             <div className="flex h-full overflow-hidden">
               <div className="w-full h-full flex flex-col pr-1">
-                <ChatScreen channelID={channelID} messages={messages}></ChatScreen>
+                <ChatScreen
+                  channelID={channelID}
+                  messages={messages}
+                ></ChatScreen>
                 <TextBox channelName={"community"} />
               </div>
-              <DmProfileSidebar avatar={'/Avatars/Mehmet ❤ Asya.png'} username={'Mehmet ❤ Asya'} tag={'3034'} created={'Jan 05, 2023'} />
+              <DmProfileSidebar
+                avatar={user.avatar}
+                dynamicAvatar={user.dynamicAvatar}
+                name={user.name}
+                tag={user.tag}
+                created={user.created}
+                banner={user.banner}
+                bannerColor={user.bannerColor}
+                themeColors={user.themeColors}
+              />
             </div>
           </div>
         </div>

@@ -10,16 +10,13 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [top, setTop] = React.useState(0);
   const [isProfileOpen, setIsProfileOpen] = React.useState(false);
-  const [userData, setUserData] = React.useState({});
 
   const [user, setUser] = React.useState();
 
   function toggleModal(member) {
     setIsOpen(!isOpen);
     setTop(refr.current.offsetTop);
-    setUserData(member);
     setUser(getUser(member._id));
-    console.log(member)
   }
 
   const handleProfileClicked = () => {
@@ -40,12 +37,13 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
           key={member._id}
         >
           <span className="h-full relative">
-            <img
-              className="rounded-full w-[32px] h-[32px]"
-              alt="pfp"
-              src={member.avatar}
+            <ProfilePicture
+              staticUrl={member.avatar}
+              dynamicUrl={member.dynamicAvatar}
+              width={32}
+              height={32}
             />
-            <Status status={member.status} className='top-[52%] -right-0.5' />
+            <Status status={member.status} className="top-[52%] -right-0.5" />
           </span>
           <div className="flex flex-col pl-1.5">
             <p
@@ -62,12 +60,17 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
           <MiniProfile
             top={top - 50}
             user={user}
-            avatar={userData.avatar}
-            username={userData.name}
-            tag={userData.tag}
-            aboutMe={userData.about}
+            avatar={
+              user.dynamicAvatar ? user.dynamicAvatar : user.avatar
+            }
+            name={user.name}
+            username={user.username}
+            aboutMe={user.about}
             rolegroup={true}
-            created={userData.created}
+            created={user.created}
+            banner={user.banner}
+            bannerColor={user.bannerColor}
+            themeColor={user.themeColors}
             onProfileClick={handleProfileClicked}
           ></MiniProfile>
           <div
@@ -79,14 +82,18 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
       {isProfileOpen && (
         <>
           <Profile
-            avatar={userData.avatar}
-            username={userData.name}
-            tag={userData.tag}
-            aboutMe={userData.about}
-            created={userData.created}
+            avatar={user.dynamicAvatar ? user.dynamicAvatar : user.avatar}
+            name={user.name}
+            username={user.username}
+            tag={user.tag}
+            aboutMe={user.about}
+            created={user.created}
             servers={user.servers}
             friends={user.friends}
             id={user._id}
+            banner={user.banner}
+            bannerColor={user.bannerColor}
+            themeColor={user.themeColors}
           />
           <div
             className={`w-screen h-screen fixed top-0 right-0 z-10 bg-black bg-opacity-80`}

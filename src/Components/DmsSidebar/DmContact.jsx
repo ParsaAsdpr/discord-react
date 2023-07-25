@@ -12,7 +12,7 @@ const DmContact = ({ name, avatar, id }) => {
         to={`/channels/@me/${id}`}
         className={`${
           isActive ? "active bg-[#4f545c99]" : ""
-        } py-1.5 px-3 items-center flex flex-row gap-4 hover:bg-[#4f545c69] w-full rounded-md text-stone-100 font-medium dms-button`}
+        } py-1.5 px-3 items-center flex flex-row gap-4 hover:bg-[#4f545c36] w-full rounded-md text-stone-100 font-medium dms-button`}
         onClick={handleClick}
       >
         <span className="h-full">

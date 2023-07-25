@@ -2,12 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities"; 
 
-*{
-  -webkit-user-select: none;
-  -ms-user-select: none; 
-  user-select: none
-}
-
 body{
   background-color: #31343a;
 }
@@ -112,4 +106,17 @@ body{
 
 .friend:hover .friend-buttons > *{
   background-color: #222222;
+}
+
+.twemoji{
+  display: inline;
+  width: 20px;
+}
+
+.message-container{
+  color: #dadada;
+}
+
+.message-container a{
+  color: #0B8CCE
 }

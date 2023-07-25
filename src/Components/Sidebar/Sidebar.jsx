@@ -29,12 +29,10 @@ const Sidebar = () => {
       <div className="flex flex-col gap-2">
         {user.servers.map((server) => (
           <ServerButton
-            // activeGuild={activeGuild}
             key={server._id}
             serverName={server.name}
             href={`/channels/${server._id}/${server.defaultChannel}`}
             serverAvatar={server.icon}
-            // activeServer={activeGuild}
             onServerClick={onServerClick}
             isVerified={server.isVerified}
           />
@@ -43,7 +41,7 @@ const Sidebar = () => {
         <ExploreServers />
         <DownloadApps />
       </div>
-      <ProfileBar name={user.name} tag={user.tag} status={user.status} avatar={user.avatar} />
+      <ProfileBar name={user.name} username={user.username} status={user.status} avatar={user.avatar} dynamicAvatar={user.dynamicAvatar} />
     </div>
   );
 };

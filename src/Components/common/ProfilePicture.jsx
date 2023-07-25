@@ -1,22 +1,37 @@
-// import React from "react";
+import React, { useState } from "react";
+import GifAvatar from "./GifAvatar";
+import Status from "./Status";
 
-// const ProfilePicture = ({url, width, height}) => {
-//     const [gifPlay, setGifPlay] = React.useState(false);
-//   const handleGifClick = () => {
-//     setGifPlay(!gifPlay)
-//     gifPlay ?  this.currentGif.play() : this.currentGif.pause();
-//   };
+const ProfilePicture = ({ staticUrl, dynamicUrl, width, height, className, themeColor, status }) => {
+  const [isHovering, setIsHovering] = useState(false);
 
-//   return (
-//     <div>
-//       <img
-//         className={`rounded-full w-[${width}px] h-[${height}px]`}
-//         alt="pfp"
-//         src={url}
-//         onClick={handleGifClick}
-//       />
-//     </div>
-//   );
-// };
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
 
-// export default ProfilePicture;
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
+  return (
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{ width: `${width}px`, height: `${height}px` }}
+      className={`${className} relative`}
+    >
+      <div
+        className="rounded-full w-full h-full cursor-pointer"
+        style={{
+          display: isHovering && dynamicUrl ? "none" : "block",
+        }}
+      >
+      <img className="rounded-full w-full h-full" src={staticUrl} alt="pfp" />
+      </div>
+      {isHovering && dynamicUrl && <GifAvatar url={dynamicUrl} width={width} height={height} />}
+      {status && <Status status={status} />}
+    </div>
+  );
+};
+
+export default ProfilePicture;

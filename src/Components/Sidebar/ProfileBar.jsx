@@ -3,19 +3,14 @@ import { IoMdMic } from "react-icons/io";
 import { MdHeadset } from "react-icons/md";
 import { RiSettings5Fill } from "react-icons/ri";
 import Status from "../common/Status";
+import ProfilePicture from "../common/ProfilePicture";
 
-const ProfileBar = ({ name, tag, status, customStatus, avatar }) => {
+const ProfileBar = ({ name,username, status, customStatus, avatar, dynamicAvatar }) => {
   return (
     <div className="absolute bg-[#232428] right-0 translate-x-full w-[15rem] bottom-0 py-1.5 px-1.5 flex justify-between gap-3">
       <div className="flex gap-0.5 profile-bar hover:bg-white hover:bg-opacity-10 rounded-[4px] py-1 px-0.5 w-full cursor-pointer">
         <div className="h-full select-none relative rounded-full">
-          <img
-            className="rounded-full"
-            alt="pfp"
-            src={avatar}
-            width={32}
-            height={32}
-          />
+          <ProfilePicture staticUrl={avatar} dynamicUrl={dynamicAvatar} width={32} height={32} />
           <Status status={status} className={"top-[54%] -right-1"} />
         </div>
         <div className="flex flex-col pl-2">
@@ -27,7 +22,7 @@ const ProfileBar = ({ name, tag, status, customStatus, avatar }) => {
                 : status.charAt(0).toUpperCase() + status.slice(1)}
             </p>
             <p className="text-[#bbbbbb] text-[10.5px] tracking-wider">
-              {name}#{tag}
+              {username}
             </p>
           </div>
         </div>

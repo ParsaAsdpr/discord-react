@@ -1,19 +1,22 @@
 export const UserData = {
   _id: "823587546578944041",
   name: "Parsa",
-  avatar: "/Avatars/danihit.jpeg",
+  avatar: "/Avatars/Static/Parsa.jpg",
   tag: "9169",
+  username: "poorsa",
   created: new Date("2022-03-22"),
   about: "fuck",
   status: "online",
   customStatus: null,
+  friendRequests: 11,
+  messageRequests: 16,
   badges: [],
   banner: null,
   servers: [
     {
       _id: "322846109712252928",
       name: "Forward Assault",
-      icon: "/Avatars/ForwardAssault.jpg",
+      icon: "/Avatars/Static/ForwardAssault.jpg",
       defaultChannel: "322846109712252928",
       isVerified: true,
     },
@@ -40,6 +43,25 @@ export const UserData = {
     },
   ],
   friends: [],
-  recentDms: [{_id: '1060500137115385886', name: 'Mehmet ❤ Asya', avatar: '/Avatars/Mehmet ❤ Asya.png' }] ,
+  recentDms: [
+    {
+      _id: "544711857429282826",
+      name: "Ashir",
+      avatar: "/Avatars/Static/Ashir.png",
+      dynamicAvatar: null,
+    },
+    {
+      _id: "1060500137115385886",
+      name: "Mehmet ❤ Asya",
+      avatar: "/Avatars/Static/Mehmet ❤ Asya.png",
+      dynamicAvatar: null,
+    },
+    {
+      _id: "747758150144229527",
+      name: "brea the air",
+      avatar: "/Avatars/Static/Brea.png",
+      dynamicAvatar: "/Avatars/Dynamic/Brea.gif",
+    },
+  ],
   isDeleted: false,
 };
