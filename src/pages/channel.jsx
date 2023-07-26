@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import ChatScreen from "../Components/ChatScreen/ChatScreen";
 import ChatTopbar from "../Components/ChatScreen/ChatTopbar";
 import MembersList from "../Components/ChatScreen/MembersList";
@@ -17,8 +18,17 @@ export default function Channel(props) {
 
   const server = getServer(serverID);
 
-  const messages =
-    serverID !== "@me" ? getMessages(channelID) : getDms(channelID);
+  const [isChannelChanged, setIsChannelChanged] = useState(false); // State to indicate if the channel has changed
+
+  // Effect to fetch and set the messages for the current chat
+  useEffect(() => {
+    setIsChannelChanged(true); // Set isChannelChanged to true to force remounting of ChatScreen
+  }, [channelID]);
+
+  // Function to clear messages and switch to another chat
+  const navigateToChat = (newChatMessages) => {
+    setIsChannelChanged(false); // Reset isChannelChanged to false to allow re-rendering of ChatScreen with new messages
+  };
 
   return (
     <>
@@ -37,10 +47,14 @@ export default function Channel(props) {
             </div>
             <div className="flex h-full overflow-hidden">
               <div className="w-full h-full flex flex-col pr-1">
-                <ChatScreen
-                  channelID={channelID}
-                  messages={messages}
-                ></ChatScreen>
+                {/* Add key prop to force remounting of ChatScreen when channel changes */}
+                {isChannelChanged ? (
+                  <ChatScreen
+                    channelID={channelID}
+                    messages={serverID !== "@me" ? getMessages(channelID) : getDms(channelID)}
+                    key={channelID}
+                  />
+                ) : null}
                 <TextBox channelName={"community"} />
               </div>
               <MembersList serverID={serverID} />
@@ -52,20 +66,30 @@ export default function Channel(props) {
           <DmsSidebar />
           <div className="flex flex-col w-full h-screen">
             <div className="w-full">
-              <ChatTopbar isDM channelName={user.name} channelIcon={user.avatar} channelDynamicIcon={user.dynamicAvatar} />
+              <ChatTopbar
+                isDM
+                channelName={user.name}
+                channelIcon={user.avatar}
+                channelDynamicIcon={user.dynamicAvatar}
+              />
             </div>
             <div className="flex h-full overflow-hidden">
               <div className="w-full h-full flex flex-col pr-1">
-                <ChatScreen
-                  channelID={channelID}
-                  messages={messages}
-                ></ChatScreen>
+                {/* Add key prop to force remounting of ChatScreen when channel changes */}
+                {isChannelChanged ? (
+                  <ChatScreen
+                    channelID={channelID}
+                    messages={serverID !== "@me" ? getMessages(channelID) : getDms(channelID)}
+                    key={channelID}
+                  />
+                ) : null}
                 <TextBox channelName={"community"} />
               </div>
               <DmProfileSidebar
                 avatar={user.avatar}
                 dynamicAvatar={user.dynamicAvatar}
                 name={user.name}
+                username={user.username}
                 tag={user.tag}
                 created={user.created}
                 banner={user.banner}

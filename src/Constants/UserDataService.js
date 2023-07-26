@@ -45,6 +45,12 @@ export const UserData = {
   friends: [],
   recentDms: [
     {
+      _id: "708218616625233960",
+      name: "a name",
+      avatar: "/Avatars/Static/default.png",
+      dynamicAvatar: null,
+    },
+    {
       _id: "544711857429282826",
       name: "Ashir",
       avatar: "/Avatars/Static/Ashir.png",

@@ -2,6 +2,14 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities"; 
 
+@font-face {
+  font-family: whitney;
+  src: url('./Fonts/whitneybook.otf');
+}
+
+*{
+  font-family: whitney;
+}
 body{
   background-color: #31343a;
 }
@@ -110,7 +118,12 @@ body{
 
 .twemoji{
   display: inline;
+  width: 50px;
+  padding-top: 3px;
+}
+.twemoji-small{
   width: 20px;
+  padding-top: 0;
 }
 
 .message-container{

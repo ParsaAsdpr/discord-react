@@ -9,7 +9,8 @@ const DmProfileSidebar = ({
   banner,
   bannerColor,
   themeColors,
-  dynamicAvatar
+  dynamicAvatar,
+  username
 }) => {
   return (
     <div
@@ -54,8 +55,8 @@ const DmProfileSidebar = ({
           <div className="bg-[#111214] w-[310px] px-3 py-3 rounded-lg">
             <div className="flex flex-col pb-3 border-b border-b-[#353535]">
               <h2 className="text-slate-100 font-semibold text-xl">{name}</h2>
-              <p className="text-slate-200 font-semibold text-[13px] select-text">
-                {name}#{tag}
+              <p className="text-slate-200 text-[14px] select-text">
+                {username}
               </p>
             </div>
 

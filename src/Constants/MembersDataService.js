@@ -123,6 +123,39 @@ export const Members = [
     friends: [],
     isDeleted: false,
   },
+  {
+    _id: "708218616625233960",
+    name: "a name",
+    tag: "3528",
+    username: 'justausrnam',
+    avatar: "/Avatars/Static/default.png",    
+    dynamicAvatar: null,
+    badges: [],
+    banner: null,
+    bannerColor: "#FCA31D",
+    about: null,
+    created: "Mar 25, 2020",
+    themeColors: null,
+    transparentProfile: false,
+    roles: [
+      {
+        _id: "451615370793713665",
+        name: "discord moderators",
+        color: "#00ff07",
+      },
+    ],
+    servers: [
+      {
+        _id: "322846109712252928",
+        name: "Forward Assault",
+        icon: "/Avatars/Static/ForwardAssault.jpg",
+        defaultChannel: "322846109712252928",
+      },
+    ],
+    friends: [],
+    isDeleted: false,
+  },
+
 ];
 
 export function getUsers() {

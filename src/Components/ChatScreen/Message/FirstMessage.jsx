@@ -6,6 +6,7 @@ import Profile from "../../common/Profile";
 import MessageActions from "./MessageActions";
 import ProfilePicture from "../../common/ProfilePicture";
 import MessageContent from "./MessageContent";
+import { formatDate } from "../../../utils/FormatDate";
 
 const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
   const initialContextMenu = {
@@ -42,7 +43,7 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
 
   return (
     <div
-      className="mt-1 pl-4 hover:bg-[#00000010] py-1 relative"
+      className="mt-1 pl-[18px] hover:bg-[#00000010] pt-1 pb-0.5 relative"
       onContextMenu={handleContextMenu}
     >
       {contextMneu.show && (
@@ -94,9 +95,9 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
             >
               {user.name}
             </p>
-            <p className="text-[11px] text-gray-400 pt-[2px]">{time}</p>
+            <p className="text-[11px] text-gray-400 pt-[2px]">{formatDate(time)}</p>
           </div>
-          <MessageContent message={message} attachment={attachment} />
+          <MessageContent message={message} attachment={attachment} author={user} />
         </div>
       </div>
       {/* <MessageActions /> */}
