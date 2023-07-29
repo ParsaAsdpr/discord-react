@@ -6,9 +6,9 @@ export const formatDate = (timestamp) => {
   const yesterday = moment().subtract(1, 'days').startOf('day');
 
   if (messageDate.isSame(today, 'd')) {
-    return messageDate.format('[Today at] HH:mm');
+    return messageDate.format('[Today at] h:mm A');
   } else if (messageDate.isSame(yesterday, 'd')) {
-    return messageDate.format('[Yesterday at] HH:mm');
+    return messageDate.format('[Yesterday at] h:mm A');
   } else {
     return messageDate.format('MM/DD/YYYY h:mm A');
   }

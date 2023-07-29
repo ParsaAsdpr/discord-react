@@ -5,8 +5,8 @@ export const Invites =
         creatorId: '747758150144229527',
         server: {
             _id: "322846109712252928",
-            name: "Forward Assault",
-            icon: "/Avatars/Static/ForwardAssault.jpg",
+            name: "Forward",
+            icon: "/Avatars/Static/Forward.jpg",
             isVerified: true,    
             online: 10,
             members: 34,    

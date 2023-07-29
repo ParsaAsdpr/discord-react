@@ -18,16 +18,14 @@ export default function Channel(props) {
 
   const server = getServer(serverID);
 
-  const [isChannelChanged, setIsChannelChanged] = useState(false); // State to indicate if the channel has changed
+  const [isChannelChanged, setIsChannelChanged] = useState(false);
 
-  // Effect to fetch and set the messages for the current chat
   useEffect(() => {
-    setIsChannelChanged(true); // Set isChannelChanged to true to force remounting of ChatScreen
+    setIsChannelChanged(true);
   }, [channelID]);
 
-  // Function to clear messages and switch to another chat
   const navigateToChat = (newChatMessages) => {
-    setIsChannelChanged(false); // Reset isChannelChanged to false to allow re-rendering of ChatScreen with new messages
+    setIsChannelChanged(false);
   };
 
   return (

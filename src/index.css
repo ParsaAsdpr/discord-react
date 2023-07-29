@@ -6,10 +6,18 @@
   font-family: whitney;
   src: url('./Fonts/whitneybook.otf');
 }
+@font-face {
+  font-family: whitney-bold;
+  src: url('./Fonts/whitneybold.otf');
+}
 
 *{
   font-family: whitney;
 }
+.bold{
+  font-family: whitney-bold !important
+}
+
 body{
   background-color: #31343a;
 }
@@ -132,4 +140,31 @@ body{
 
 .message-container a{
   color: #0B8CCE
+}
+
+
+.channel-scroll{
+  scroll-behavior: inherit;
+}
+.channel-scroll::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 100px 100px;
+}
+
+/* Track */
+.channel-scroll::-webkit-scrollbar-track {
+  background: #2d2f33;
+  border-radius: 100px 100px;
+}
+
+/* Handle */
+.channel-scroll::-webkit-scrollbar-thumb {
+  background: #1f1f1f;
+  border-radius: 100px 100px;
+}
+
+/* Handle on hover */
+.channel-scroll::-webkit-scrollbar-thumb:hover {
+  background: #1f1f1f;
+  border-radius: 100px 100px;
 }
