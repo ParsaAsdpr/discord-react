@@ -1,8 +1,8 @@
 export const ServersData = [
   {
     _id: "322846109712252928",
-    name: "Forward",
-    icon: "/Avatars/Static/Forward.jpg",
+    name: "Forward Assault",
+    icon: "/Avatars/Static/ForwardAssault.jpg",
     isVerified: true,
     isDiscoverable: true,
     categories: [
@@ -30,6 +30,20 @@ export const ServersData = [
         name: "moderators",
         color: "#ffff00",
         members: [
+          {
+            _id: "747758150144229527",
+            name: "brea the air",
+            username: 'bwea',
+            tag: "9999",
+            avatar: "/Avatars/Static/Brea.png",
+            dynamicAvatar: "/Avatars/Dynamic/Brea.gif",
+            badges: [],
+            status: "dnd",
+            banner: null,
+            about: "donkey",
+            created: "Aug 25, 2020",
+            joined: "Feb 04, 2023",
+          },
         ],
       },
       {
@@ -61,6 +75,21 @@ export const ServersData = [
       },
     ],
     members: [
+      {
+        _id: "747758150144229527",
+        name: "brea the air",
+        tag: "9999",
+        username: 'bwea',
+        avatar: "/Avatars/Static/Brea.png",
+        dynamicAvatar: "/Avatars/Dynamic/Brea.gif",
+        badges: [],
+        banner: null,
+        about: null,
+        created: "Aug 25, 2020",
+        roles: [
+          { _id: "630453208464097339", name: "moderators", color: "#ffff00" },
+        ],
+      },
       {
         _id: "823587546578944041",
         name: "Parsa",

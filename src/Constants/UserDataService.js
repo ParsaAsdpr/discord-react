@@ -15,8 +15,8 @@ export const UserData = {
   servers: [
     {
       _id: "322846109712252928",
-      name: "Forward",
-      icon: "/Avatars/Static/Forward.jpg",
+      name: "Forward Assault",
+      icon: "/Avatars/Static/ForwardAssault.jpg",
       defaultChannel: "322846109712252928",
       isVerified: true,
     },
@@ -61,6 +61,12 @@ export const UserData = {
       name: "Mehmet ❤ Asya",
       avatar: "/Avatars/Static/Mehmet ❤ Asya.png",
       dynamicAvatar: null,
+    },
+    {
+      _id: "747758150144229527",
+      name: "brea the air",
+      avatar: "/Avatars/Static/Brea.png",
+      dynamicAvatar: "/Avatars/Dynamic/Brea.gif",
     },
   ],
   isDeleted: false,

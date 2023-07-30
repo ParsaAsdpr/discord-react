@@ -50,6 +50,37 @@ export const Dms = [
     ],
   },
   {
+    _id: "747758150144229527",
+    name: "brea the air",
+    tag: "9999",
+    username: "bwea",
+    avatar: "/Avatars/Static/Brea.png",
+    dynamicAvatar: "/Avatars/Dynamic/Brea.gif",
+    messages: [
+      {
+        _id: randomNumber,
+        content: "hello https://discord.gg/76xQXARS",
+        authorID: "747758150144229527",
+        attachment: null,
+        time: 1690293136,
+      },
+      {
+        _id: randomNumber,
+        content: "hello",
+        authorID: "823587546578944041",
+        attachment: null,
+        time: 1690293136,
+      },
+      {
+        _id: randomNumber,
+        content: "hello",
+        authorID: "747758150144229527",
+        attachment: null,
+        time: 1690293136,
+      },
+    ],
+  },
+  {
     _id: "1060500137115385886",
     name: "Mehmet ❤ Asya",
     tag: "3034",

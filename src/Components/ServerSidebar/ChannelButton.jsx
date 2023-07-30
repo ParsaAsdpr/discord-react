@@ -13,9 +13,9 @@ const ChannelButton = ({
 }) => {
   const { channelID } = useParams();
 
-  useEffect(() => {
-    channelID === channelId && setActiveChannel(channelID);
-  }, [channelID]);
+  // useEffect(() => {
+  channelID === channelId && setActiveChannel(channelID);
+  // }, [channelID]);
 
   // console.log(activeChannel);
 
@@ -27,13 +27,19 @@ const ChannelButton = ({
         className={`${
           activeChannel === channelId && "bg-[#3f4246] hover:bg-[#3d4044]"
         } ${
-          shouldDisplayChannel || channelID !== activeChannel ? "hidden" : "block"
+          !shouldDisplayChannel || activeChannel === channelId
+            ? "block"
+            : "hidden"
         } text-[15px] flex justify-between items-center channel-button font-semibold default-color ml-1.5 py-1 px-2 hover:bg-[#35373b] hover:text-slate-300 cursor-pointer rounded-[3px] mt-0.5`}
         to={`/channels/${serverId}/${channelId}`}
       >
         <div className="flex items-center gap-1 ">
           <BiHash className="text-[20px] default-color" />
-          <p className={`${activeChannel === channelId && "text-white"}`}>
+          <p
+            className={`${activeChannel === channelId && "text-white"} ${
+              !isRead && "text-[#eeeeee]"
+            }`}
+          >
             {channelName}
           </p>
         </div>

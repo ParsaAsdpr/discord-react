@@ -3,7 +3,7 @@ export const ServerCategories =
     {
       _id: "359090935075831818",
       name: "welcome / information",
-      server: { _id: "322846109712252928", name: "Forward" },
+      server: { _id: "322846109712252928", name: "Forward Assault" },
       channels: [
         { _id: "839594470890143754", name: "welcome", isDefault: false, isRead: true },
         { _id: "795022449275174946", name: "rules", isDefault: false, isRead: true },
