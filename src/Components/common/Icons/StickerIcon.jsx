@@ -6,7 +6,7 @@ const StickerIcon = ({className}) => {
       width="24"
       height="24"
       className={className}
-      ariaHidden="true"
+      aria-hidden="true"
       role="img"
       viewBox="0 0 20 20"
     >

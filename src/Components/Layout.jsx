@@ -4,7 +4,6 @@ import {UserData} from "../Constants/UserDataService";
 import UserContext from "../Context/UserContext";
 
 export default function Layout({ title, children }) {
-  // let titleText = `• Discord | ${title}`
   return (
     <UserContext.Provider value={UserData}>
       <div className="flex min-h-screen flex-row w-full">

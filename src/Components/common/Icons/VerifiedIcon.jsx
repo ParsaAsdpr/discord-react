@@ -5,7 +5,7 @@ const VerifiedIcon = ({className}) => {
     <div className="relative">
       <svg
         className={className}
-        ariaHidden="true"
+        aria-hidden="true"
         role="img"
         width="16"
         height="16"

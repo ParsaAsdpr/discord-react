@@ -1,10 +1,10 @@
 import React from "react";
 import RolesGroup from "./RolesGroup";
-import { getServer } from "../../Constants/ServersDataService";
 
 
-const MembersList = ({serverID}) => {
-  const roles = getServer(serverID).roles;
+const MembersList = ({roles}) => {
+
+  console.log(roles);
 
   return (
       <div className="bg-[#2B2D31] px-2 w-72 h-full relative overflow-y-auto overflow-x-visible pt-6">

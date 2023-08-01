@@ -55,7 +55,7 @@ export default function Channel(props) {
                 ) : null}
                 <TextBox channelName={"community"} />
               </div>
-              <MembersList serverID={serverID} />
+              <MembersList roles={server.roles} />
             </div>
           </div>
         </div>

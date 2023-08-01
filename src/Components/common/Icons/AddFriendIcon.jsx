@@ -6,7 +6,7 @@ const AddFriendIcon = () => {
       x="0"
       y="0"
       className="icon-2xnN2Y"
-      ariaHidden="true"
+      aria-hidden="true"
       role="img"
       width="24"
       height="24"

@@ -1,9 +1,10 @@
 import React from "react";
 import Status from "../common/Status";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BiSolidMessage } from "react-icons/bi";
 
 const Friend = ({ avatar, name, status }) => {
+  const navigate = useNavigate();
   return (
     <div className=" px-3 hover:bg-stone-200 hover:bg-opacity-5 mx-4 rounded-md w-full friend">
       <div className=" cursor-pointer items-center flex justify-between border-t-stone-200 border-t border-opacity-5">
@@ -28,12 +29,12 @@ const Friend = ({ avatar, name, status }) => {
           </div>
         </div>
         <div className="flex gap-2 friend-buttons">
-          <Link
-            to={"#"}
+          <span
+          onClick={() => navigate(`/`)}
             className="rounded-full flex items-center justify-center w-9 h-9 text-[18px] text-[#bbbbbb] bg-[#222222] bg-opacity-30"
           >
             <BiSolidMessage />
-          </Link>
+          </span>
           <button className="rounded-full text-center w-9 h-9 rotate-90 text-2xl text-[#bbbbbb] bg-[#222222] bg-opacity-30">
             <p className="-translate-y-1/4">...</p>
           </button>

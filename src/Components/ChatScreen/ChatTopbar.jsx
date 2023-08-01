@@ -23,7 +23,7 @@ const ChatTopbar = ({ isDM, channelName, channelIcon, channelDynamicIcon }) => {
           <div className="flex flex-row items-center">
             <div className="flex items-center gap-3 pr-4">
               <ProfilePicture staticUrl={channelIcon} dynamicUrl={channelDynamicIcon} width={24} height={24} />
-              <p className="text-slate-200 font-bold text-[15px]">
+              <p className="text-[#eeeeee] tracking-wider font-bold text-[15px]">
                 {channelName}
               </p>
             </div>

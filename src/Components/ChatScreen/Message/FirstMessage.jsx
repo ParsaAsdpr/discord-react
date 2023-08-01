@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ContextMenu from "../../common/ContextMenu";
 import MiniProfile from "../../common/MiniProfile";
 import { getUser } from "../../../Constants/MembersDataService";
@@ -7,16 +7,27 @@ import MessageActions from "./MessageActions";
 import ProfilePicture from "../../common/ProfilePicture";
 import MessageContent from "./MessageContent";
 import { formatDate } from "../../../utils/FormatDate";
+import { useParams } from "react-router-dom";
+import { getServer } from "../../../Constants/ServersDataService";
 
-const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
+const FirstMessage = ({ message, authorID, attachment, time }) => {
   const initialContextMenu = {
     show: false,
     x: 0,
     y: 0,
   };
+  const [userRoles, setUserRoles] = useState([]);
 
   const user = getUser(authorID);
 
+  const { serverID } = useParams();
+  React.useEffect(() => {
+    if (serverID !== "@me") {
+      const server = getServer(serverID);
+      const member = server.members.find((member) => member._id === authorID);
+      setUserRoles(member ? member.roles.map((role) => role) : []);
+    }
+  }, [serverID]);
   const refr = React.useRef();
   const [isOpen, setIsOpen] = React.useState(false);
   const [isProfileOpen, setIsProfileOpen] = React.useState(false);
@@ -65,18 +76,9 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
             <>
               <MiniProfile
                 top={top - 50}
-                avatar={user.dynamicAvatar ? user.dynamicAvatar : user.avatar}
-                name={user.name}
-                username={user.username}
-                tag={user.tag}
-                aboutMe={user.about}
                 user={user}
-                created={user.created}
-                servers={user.servers}
-                friends={user.friends}
-                banner={user.banner}
-                bannerColor={user.bannerColor}
-                themeColor={user.themeColors}
+                avatar={user.dynamicAvatar ? user.dynamicAvatar : user.avatar}
+                roles={userRoles}
                 onProfileClick={handleProfileClicked}
               ></MiniProfile>
               <div
@@ -89,15 +91,23 @@ const FirstMessage = ({ message, roleColor, authorID, attachment, time }) => {
         <div className="flex flex-col select-text">
           <div className="flex items-center">
             <p
-              className=" text-base font-semibold leading-none pr-2.5 hover:underline cursor-pointer"
-              style={{ color: roleColor ? roleColor : "#eeeeee" }}
+              className=" text-base leading-none pr-2.5 hover:underline cursor-pointer"
+              style={{
+                color: userRoles.length > 0 ? userRoles[0].color : "#eeeeee",
+              }}
               onClick={toggleModal}
             >
               {user.name}
             </p>
-            <p className="text-[11px] text-gray-400 pt-[2px]">{formatDate(time)}</p>
+            <p className="text-[11px] text-gray-400 pt-[2px]">
+              {formatDate(time)}
+            </p>
           </div>
-          <MessageContent message={message} attachment={attachment} author={user} />
+          <MessageContent
+            message={message}
+            attachment={attachment}
+            author={user}
+          />
         </div>
       </div>
       {/* <MessageActions /> */}

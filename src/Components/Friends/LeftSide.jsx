@@ -27,7 +27,7 @@ const LeftSide = ({ friends }) => {
           </div>
         </>
       ) : (
-        <div className="h-full flex flex-col gap-12 items-center justify-center text-[#8a8a8a] text-[15px]">
+        <div className="h-full flex flex-col gap-12 items-center justify-center text-[#8a8a8a] text-[16px]">
           <img src="/nofriend.svg" alt="" />
           <h2>No one's around to play with Wumpus.</h2>
         </div>

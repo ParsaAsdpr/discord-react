@@ -6,7 +6,7 @@ const GiftIcon = ({className}) => {
     className={className}
       width="30"
       height="30"
-      ariaHidden="true"
+      aria-hidden="true"
       role="img"
       viewBox="0 0 24 24"
     >

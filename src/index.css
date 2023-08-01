@@ -42,13 +42,16 @@ body{
   fill: #fff
 }
 
-.dms-button *{
+.dms-button p, .dms-button svg {
   color: #a5a5a5;
 }
-.dms-button:hover *{
+.dms-button:hover p{
   color: #eee;
 }
-.dms-button.active *{
+.dms-button:hover .close-dm{
+  display: block;
+}
+.dms-button.active p{
   color: #eee;
 }
 
@@ -166,5 +169,35 @@ body{
 /* Handle on hover */
 .channel-scroll::-webkit-scrollbar-thumb:hover {
   background: #1f1f1f;
+  border-radius: 100px 100px;
+}
+
+.dm-sidebar{
+  overflow-y: hidden;
+  scroll-behavior: inherit;
+}
+.dm-sidebar:hover{
+  overflow-y: hidden;
+}
+.dm-sidebar::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 100px 100px;
+}
+
+/* Track */
+.dm-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100px 100px;
+}
+
+/* Handle */
+.dm-sidebar::-webkit-scrollbar-thumb {
+  background: #1a1a1d;
+  border-radius: 100px 100px;
+}
+
+/* Handle on hover */
+.dm-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #1a1a1d;
   border-radius: 100px 100px;
 }

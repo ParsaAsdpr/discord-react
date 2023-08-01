@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderRightSide = ({icon, url}) => {
+    const navigate = useNavigate();
     return (
-        <Link to={url} className='frs'>
+        <span onClick={() => navigate(url)} className='frs'>
             {icon}
-        </Link>
+        </span>
     );
 };
 

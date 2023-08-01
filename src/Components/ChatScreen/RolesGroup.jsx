@@ -4,19 +4,26 @@ import { getUser } from "../../Constants/MembersDataService";
 import Profile from "../common/Profile";
 import ProfilePicture from "../common/ProfilePicture";
 import Status from "../common/Status";
+import { useParams } from "react-router-dom";
+import { getServer } from "../../Constants/ServersDataService";
 
-const RolesGroup = ({ role, members, roles, roleColor }) => {
+const RolesGroup = ({ role }) => {
   const refr = React.useRef();
   const [isOpen, setIsOpen] = React.useState(false);
   const [top, setTop] = React.useState(0);
   const [isProfileOpen, setIsProfileOpen] = React.useState(false);
+  const [userRoles, setUserRoles] = React.useState([]);
 
   const [user, setUser] = React.useState();
+  const { serverID } = useParams();
+  const server = getServer(serverID);
 
-  function toggleModal(member) {
+  function toggleModal(roleUser) {
     setIsOpen(!isOpen);
     setTop(refr.current.offsetTop);
-    setUser(getUser(member._id));
+    setUser(getUser(roleUser._id));
+    const member = server.members.find((member) => member._id === roleUser._id);
+    setUserRoles(member ? member.roles.map((role) => role) : []);
   }
 
   const handleProfileClicked = () => {
@@ -60,17 +67,9 @@ const RolesGroup = ({ role, members, roles, roleColor }) => {
           <MiniProfile
             top={top - 50}
             user={user}
-            avatar={
-              user.dynamicAvatar ? user.dynamicAvatar : user.avatar
-            }
-            name={user.name}
-            username={user.username}
-            aboutMe={user.about}
+            roles={userRoles}
+            avatar={user.dynamicAvatar ? user.dynamicAvatar : user.avatar}
             rolegroup={true}
-            created={user.created}
-            banner={user.banner}
-            bannerColor={user.bannerColor}
-            themeColor={user.themeColors}
             onProfileClick={handleProfileClicked}
           ></MiniProfile>
           <div

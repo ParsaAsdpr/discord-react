@@ -3,8 +3,8 @@ import React from "react";
 const NitroIcon = () => {
   return (
     <svg
-      class="linkButtonIcon-7rsZcu"
-      ariaHidden="true"
+      className="linkButtonIcon-7rsZcu"
+      aria-hidden="true"
       role="img"
       width="24"
       height="24"

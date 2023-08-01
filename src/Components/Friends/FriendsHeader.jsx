@@ -5,9 +5,10 @@ import InboxIcon from "../common/Icons/InboxIcon";
 import NewGroupIcon from "../common/Icons/NewGroupIcon";
 import FriendsTab from "./FriendsTab";
 import HeaderRightSide from "./HeaderRightSide";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const FriendsHeader = ({ activeTab, onTabChange }) => {
+  const navigate = useNavigate();
   const handleActive = (tab) => {
     return activeTab === tab.toLowerCase() ? true : false;
   };
@@ -28,12 +29,12 @@ const FriendsHeader = ({ activeTab, onTabChange }) => {
             key={tab}
           />
         ))}
-        <Link
+        <span
           className="px-2 rounded-[0.25rem] bg-[#2D7D46] text-[#eee] font-medium"
-          to="/"
+          onClick={() => navigate('/')}
         >
           Add Friend
-        </Link>
+        </span>
       </div>
       <div className="flex flex-row gap-4">
         <div className="pr-4 border-r border-r-stone-300 border-opacity-20">

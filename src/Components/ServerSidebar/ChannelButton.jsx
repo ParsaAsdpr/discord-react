@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BiHash } from "react-icons/bi";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ChannelButton = ({
   channelName,
@@ -12,18 +12,20 @@ const ChannelButton = ({
   setActiveChannel,
 }) => {
   const { channelID } = useParams();
+  const navigate = useNavigate()
 
-  // useEffect(() => {
+  useEffect(() => {
   channelID === channelId && setActiveChannel(channelID);
-  // }, [channelID]);
+  }, [channelID]);
 
   // console.log(activeChannel);
 
   const shouldDisplayChannel = !isOpen && isRead;
 
   return (
-    <li>
-      <Link
+    <li className="relative">
+      {!isRead && <span className="absolute top-1/2 left-0 -translate-y-1/2 bg-white px-0.5 py-1 rounded-r-md"></span>}
+      <span
         className={`${
           activeChannel === channelId && "bg-[#3f4246] hover:bg-[#3d4044]"
         } ${
@@ -31,7 +33,7 @@ const ChannelButton = ({
             ? "block"
             : "hidden"
         } text-[15px] flex justify-between items-center channel-button font-semibold default-color ml-1.5 py-1 px-2 hover:bg-[#35373b] hover:text-slate-300 cursor-pointer rounded-[3px] mt-0.5`}
-        to={`/channels/${serverId}/${channelId}`}
+        onClick={() => navigate(`/channels/${serverId}/${channelId}`)}
       >
         <div className="flex items-center gap-1 ">
           <BiHash className="text-[20px] default-color" />
@@ -66,7 +68,7 @@ const ChannelButton = ({
             d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z"
           ></path>
         </svg>
-      </Link>
+      </span>
     </li>
   );
 };

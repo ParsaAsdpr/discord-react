@@ -12,7 +12,7 @@ const MembersListIcon = () => {
     <svg
       x="0"
       y="0"
-      ariaHidden="true"
+      aria-hidden="true"
       role="img"
       width="24"
       height="24"

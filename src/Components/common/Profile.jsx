@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import MiniProfileSection from "./MiniProfileSection";
 import { motion } from "framer-motion";
 import UserContext from "../../Context/UserContext";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ProfilePicture from "./ProfilePicture";
 
 const Profile = ({
@@ -22,6 +22,8 @@ const Profile = ({
   const { _id } = useContext(UserContext);
   const [notUser, setNotUser] = useState(true);
   const [activeTab, setActiveTab] = useState("User Info");
+
+  const navigate = useNavigate();
 
   const handleTabClick = (tab) => {
     if (tab === activeTab) return null;
@@ -171,8 +173,8 @@ const Profile = ({
                 return (
                   <div className="flex flex-col h-64 overflow-y-auto">
                     {servers.map((server) => (
-                      <Link
-                        to={`/channels/${server._id}/${server.defaultChannel}`}
+                      <div
+                        onClick={() => navigate(`/channels/${server._id}/${server.defaultChannel}`)}
                         className="w-full flex gap-2 mb-1 py-1 px-1 mt-3.5 items-center hover:bg-[#ffffff15] cursor-pointer rounded-[4px]"
                       >
                         <img
@@ -183,7 +185,7 @@ const Profile = ({
                         <p className="text-stone-200 text-[16px]">
                           {server.name}
                         </p>
-                      </Link>
+                      </div>
                     ))}
                   </div>
                 );

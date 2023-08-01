@@ -15,7 +15,7 @@ const ChannelList = ({ categoryName, serverId, channels, activeChannel, setActiv
       className={`my-5 select-none pr-1.5`}
     >
       <div
-        className="flex gap-0.5 text-[11.35px] font-[500] items-center cursor-pointer default-color hover:text-slate-200 duration-50 mb-1"
+        className="flex gap-0.5 text-[12px] scale-y-90 font-[600] items-center cursor-pointer default-color hover:text-slate-200 duration-50 mb-1"
         onClick={handleClick}
       >
         <MdKeyboardArrowRight

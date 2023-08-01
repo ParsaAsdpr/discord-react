@@ -1,28 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Tooltip from "../common/Tooltip";
 
-const FriendsButton = () => {
+const FriendsButton = ({ friendRequests }) => {
   const [isActive, setActive] = React.useState(false);
   const [IsShown, setIsShown] = React.useState(false);
 
-  const handleClick = () => {
-    setActive(!isActive);
-  };
-  // ${isActive ? 'rounded-2xl bg-[#5865F2]' : 'rounded-full bg-[#36393F]'}
+  const navigate = useNavigate();
+
+  const url = window.location.href;
+
+  React.useEffect(() => {
+    setActive(url.includes('@me'));
+  }, [url]);
+
+  React.useEffect(() => {
+    setActive(url.includes('@me'));
+    return () => {
+      setActive(false);
+    };
+  }, [url]);
+
   return (
-    <Link to="/channels/@me">
+    <span onClick={() => navigate("channels/@me")}>
       <div
         className={`${
           isActive ? "active bg-[#5865F2]" : "bg-[#36393F]"
         } side-icon hover:bg-[#5865F2] text-white cursor-pointer py-3.5 px-2.5 w-full duration-200 flex flex-row relative justify-center items-center`}
-        onClick={handleClick}
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
         <svg
           className="w-full h-full"
-          ariaHidden="true"
+          aria-hidden="true"
           role="img"
           width="28"
           height="20"
@@ -37,11 +47,21 @@ const FriendsButton = () => {
           <span className="absolute top-[4px] -left-3 h-10 bg-white w-1 rounded-r-md"></span>
         )}
         {IsShown && <Tooltip name={"Direct Messages"} />}
+        <div className="p-1 flex absolute -bottom-1 -right-1 z-10 bg-[#202225] rounded-full">
+          <span
+            className={
+              "text-[11px] font-bold p-[5px] leading-none py-[2.3px] bg-red-500 rounded-full opacity-1"
+            }
+            style={{ color: "white" }}
+          >
+            {friendRequests}
+          </span>
+        </div>
       </div>
       <div className="px-2">
         <div className="w-full border-b-2 border-b-[#373A3F] my-2"></div>
       </div>
-    </Link>
+    </span>
   );
 };
 

@@ -16,7 +16,7 @@ const BoostGoal = ({ boosters }) => {
       setLevel(3);
       setMaxValue(15);
     }
-  }, []);
+  }, [boosters]); // Add boosters to the dependency array
 
   return (
     <div className="flex flex-col">

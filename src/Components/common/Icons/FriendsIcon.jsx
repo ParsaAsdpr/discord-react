@@ -3,7 +3,7 @@ import React from "react";
 const FriendsIcon = ({color}) => {
   return (
     <svg
-      ariaHidden="true"
+      aria-hidden="true"
       role="img"
       width="24"
       height="24"

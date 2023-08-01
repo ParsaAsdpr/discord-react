@@ -1,26 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import UserContext from "../../Context/UserContext";
 
-const DmsButton = ({ text, svg }) => {
+const DmsButton = ({ text, svg, url }) => {
   const [isActive, setActive] = React.useState(false);
+  const { friendRequests } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const { channelID } = useParams();
+
+  useEffect(() => {
+    !channelID && text.toLowerCase() === "friends" && setActive(true);
+  });
   const handleClick = () => {
-    setActive(!isActive);
+    navigate(url);
   };
 
   return (
-    <Link
+    <span
       className={`${
-        isActive ? "active bg-[#4f545c99]" : ""
-      } py-2.5 px-4 items-center relative flex flex-row gap-4 hover:bg-[#4f545c69] rounded-md text-stone-100 font-medium dms-button`}
+        isActive ? "active bg-[#575c613a]" : ""
+      } py-2.5 px-4  hover:bg-[#44495046] flex justify-between cursor-pointer select-none items-center rounded-md text-stone-100 font-medium dms-button`}
       onClick={handleClick}
-      to="/"
     >
-      <span className="h-full">{svg}</span>
-      {isActive && (
-        <span className="absolute top-[4px] -left-3 h-10 bg-white w-1 rounded-r-md"></span>
+      <div className="items-center relative flex flex-row gap-4">
+        <span className="h-full">{svg}</span>
+        <p>{text}</p>
+      </div>
+      {text.toLowerCase() === "friends" && (
+        <span
+          className={
+            "text-[11px] font-bold p-[5px] leading-none py-[2.3px] bg-red-500 rounded-full opacity-1"
+          }
+          style={{ color: "white" }}
+        >
+          {friendRequests}
+        </span>
       )}
-      <p>{text}</p>
-    </Link>
+    </span>
   );
 };
 

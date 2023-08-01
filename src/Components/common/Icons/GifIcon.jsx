@@ -6,7 +6,7 @@ const GifIcon = ({className}) => {
       width="30"
       height="30"
       className={className}
-      ariaHidden="true"
+      aria-hidden="true"
       role="img"
       viewBox="0 0 24 24"
     >
