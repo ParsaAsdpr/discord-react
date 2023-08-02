@@ -26,6 +26,7 @@ const MessageContent = ({ message, attachment, author }) => {
   // Check if the message only contains emojis and there are less than six emojis
   const isMessageWithSmallEmojis =
     containsOnlyEmojis(message) && countEmojis(message) < 6;
+
   return (
     <Twemoji
       options={{

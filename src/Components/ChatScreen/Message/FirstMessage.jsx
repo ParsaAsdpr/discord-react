@@ -103,11 +103,13 @@ const FirstMessage = ({ message, authorID, attachment, time }) => {
               {formatDate(time)}
             </p>
           </div>
-          <MessageContent
-            message={message}
-            attachment={attachment}
-            author={user}
-          />
+          {user && (
+            <MessageContent
+              message={message}
+              attachment={attachment}
+              author={user}
+            />
+          )}
         </div>
       </div>
       {/* <MessageActions /> */}
