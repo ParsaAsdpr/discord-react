@@ -247,19 +247,6 @@ export const ServerCategories = [
       },
     ],
   },
-  {
-    _id: "607525739207091713",
-    name: "am sikenler 31",
-    server: { _id: "849057016084824166", name: "OTUZBİRCİLER" },
-    channels: [
-      {
-        _id: "230465074027791282",
-        name: "31CİLER",
-        isDefault: true,
-        isRead: true,
-      },
-    ],
-  },
 ];
 
 export function getServerCategories(serverID) {

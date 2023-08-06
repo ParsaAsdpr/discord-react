@@ -17,12 +17,6 @@ export const ServersData = [
         name: "moderators",
         color: "#ffff00",
         members: [
-          {
-            _id: "747758150144229527",
-            name: "bera",
-            avatar: "/Avatars/Static/Brea.png",
-            status: "dnd",
-          },
         ],
       },
       {
@@ -53,13 +47,6 @@ export const ServersData = [
       },
     ],
     members: [
-      {
-        _id: "747758150144229527",
-        name: "bera",
-        roles: [
-          { _id: "630453208464097339", name: "moderators", color: "#ffff00" },
-        ],
-      },
       {
         _id: "535459462622740511",
         name: "Lisoo",
@@ -95,7 +82,7 @@ export const ServersData = [
     roles: [
       {
         _id: "700434523136983050",
-        name: "The King",
+        name: "a role",
         color: "#ff0000",
         members: [
           {
@@ -158,7 +145,7 @@ export const ServersData = [
     roles: [
       {
         _id: "1041843492311289907",
-        name: "Dick Sucker",
+        name: "cool role",
         color: "#ff0000",
         members: [
           {
@@ -178,40 +165,6 @@ export const ServersData = [
         avatar: "/Avatars/Static/default3.png",
         roles: [
           { _id: "1041843492311289907", name: "Dick Sucker", color: "#ff0000" },
-        ],
-      },
-    ],
-    boosters: [],
-  },
-  {
-    _id: "849057016084824166",
-    name: "OTUZBİRCİLER",
-    icon: "/Avatars/Static/turkish.jpg",
-    isVerified: false,
-    isDiscoverable: false,
-    roles: [
-      {
-        _id: "549057016084824166",
-        name: "idk",
-        color: "#ff0000",
-        members: [
-          {
-            _id: "535459462622740511",
-            name: "Lisoo",
-            avatar: "/Avatars/Static/default3.png",
-            status: "online",
-            roles: [{ _id: "1041843492311289907", name: "Dick Sucker" }],
-          },
-        ],
-      },
-    ],
-    members: [
-      {
-        _id: "535459462622740511",
-        name: "Lisoo",
-        avatar: "/Avatars/Static/default3.png",
-        roles: [
-          { _id: "549057016084824166", name: "idk", color: "#ff0000" },
         ],
       },
     ],
