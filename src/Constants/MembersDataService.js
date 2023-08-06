@@ -534,6 +534,26 @@ export const Members = [
     friends: [],
     isDeleted: false,
   },
+  {
+    _id: "432715219560017901",
+    name: "zaha",
+    tag: "7348",
+    username: "aksee",
+    avatar: "/Avatars/Static/zaha.png",
+    dynamicAvatar: null,
+    status: "idle",
+    customStatus: null,
+    badges: [],
+    banner: null,
+    bannerColor: "#eeeeee",
+    about: null,
+    created: "Feb 24, 2020",
+    themeColors: null,
+    transparentProfile: false,
+    servers: [],
+    friends: [],
+    isDeleted: false,
+  },
 ];
 
 export function getUsers() {
