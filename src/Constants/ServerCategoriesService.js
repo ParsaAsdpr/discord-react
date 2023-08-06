@@ -235,13 +235,26 @@ export const ServerCategories = [
     channels: [],
   },
   {
-    _id: "607525914607091713",
+    _id: "947525914607091713",
     name: "Parsatopia",
     server: { _id: "607525914607091712", name: "Parsatopia" },
     channels: [
       {
         _id: "700465075277791282",
         name: "general",
+        isDefault: true,
+        isRead: true,
+      },
+    ],
+  },
+  {
+    _id: "607525739207091713",
+    name: "am sikenler 31",
+    server: { _id: "849057016084824166", name: "OTUZBİRCİLER" },
+    channels: [
+      {
+        _id: "230465074027791282",
+        name: "31CİLER",
         isDefault: true,
         isRead: true,
       },

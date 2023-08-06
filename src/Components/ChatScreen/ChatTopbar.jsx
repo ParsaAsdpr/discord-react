@@ -53,7 +53,7 @@ const ChatTopbar = ({ isDM, channelName, channelIcon, channelDynamicIcon }) => {
             </div>
             <div>
               <p className="text-[13.4px] font-semibold text-[#afafaf] pl-4 ">
-                Remember <Tag>community</Tag> Channel is to be used to have
+                Remember <Tag text={'#community'}></Tag> Channel is to be used to have
                 conversations or free speech amongst Community and Staff! It is
                 not to be used to post Links. Links must be post...
               </p>

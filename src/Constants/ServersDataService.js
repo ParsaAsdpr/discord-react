@@ -151,7 +151,7 @@ export const ServersData = [
   },
   {
     _id: "739854684566585426",
-    name: "Deleted User fy5y5a7c's server",
+    name: "Deleted User's server",
     icon: null,
     isVerified: false,
     isDiscoverable: false,
@@ -178,6 +178,40 @@ export const ServersData = [
         avatar: "/Avatars/Static/default3.png",
         roles: [
           { _id: "1041843492311289907", name: "Dick Sucker", color: "#ff0000" },
+        ],
+      },
+    ],
+    boosters: [],
+  },
+  {
+    _id: "849057016084824166",
+    name: "OTUZBİRCİLER",
+    icon: "/Avatars/Static/turkish.jpg",
+    isVerified: false,
+    isDiscoverable: false,
+    roles: [
+      {
+        _id: "549057016084824166",
+        name: "idk",
+        color: "#ff0000",
+        members: [
+          {
+            _id: "535459462622740511",
+            name: "Lisoo",
+            avatar: "/Avatars/Static/default3.png",
+            status: "online",
+            roles: [{ _id: "1041843492311289907", name: "Dick Sucker" }],
+          },
+        ],
+      },
+    ],
+    members: [
+      {
+        _id: "535459462622740511",
+        name: "Lisoo",
+        avatar: "/Avatars/Static/default3.png",
+        roles: [
+          { _id: "549057016084824166", name: "idk", color: "#ff0000" },
         ],
       },
     ],

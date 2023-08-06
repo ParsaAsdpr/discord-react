@@ -10,7 +10,8 @@
 
 # production
 /build
-/Constants
+/src/Constants/
+/public
 
 # misc
 .DS_Store

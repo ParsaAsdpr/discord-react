@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import MiniProfileSection from "./MiniProfileSection";
 import ProfilePicture from "./ProfilePicture";
+import Status from "./Status";
 
 const MiniProfile = ({
   rolegroup,
@@ -21,7 +22,7 @@ const MiniProfile = ({
       transition={{ duration: 0.2 }}
       className={` ${rolegroup ? "right-64 fixed" : `absolute top-0 left-12`} ${
         user.themeColors && "p-1"
-      } z-50 rounded-md drop-shadow-[0_13px_10px_rgba(0,0,0,0.23)]`}
+      } z-30 rounded-md drop-shadow-[0_13px_10px_rgba(0,0,0,0.23)]`}
       style={{
         background: user.themeColors
           ? `linear-gradient(to bottom, ${user.themeColors[0]} , ${user.themeColors[1]})`
@@ -52,7 +53,7 @@ const MiniProfile = ({
         >
           <div className="h-[80px] w-[80px] rounded-full overflow-hidden relative miniprofile-avatar">
             <div
-              className="absolute top-0 right-0 z-50 bg-black bg-opacity-60 hidden items-center justify-center
+              className="absolute top-0 right-0 z-30 bg-black bg-opacity-60 hidden items-center justify-center
              w-full h-full text-slate-200 font-bold text-[10px] text-center cursor-pointer miniprofile-overlay"
               onClick={onProfileClick}
             >
@@ -61,17 +62,13 @@ const MiniProfile = ({
             <img
               src={avatar}
               alt="avatar"
-              className="h-full w-full absolute z-40"
-            />
-            <ProfilePicture
-              staticUrl={avatar}
-              dynamicUrl={avatar}
-              className={"absolute z-40"}
+              className="h-full w-full absolute z-20"
             />
           </div>
           {user.themeColors && (
             <div className="bg-black bg-opacity-[0.62] absolute top-0 right-0 w-[92px] h-[92px] z- rounded-full"></div>
-          )}
+            )}
+            <Status status={user.status} className="top-[64%] right-1" background={'bg-[#232327]'} isBig></Status>
         </div>
 
         <div

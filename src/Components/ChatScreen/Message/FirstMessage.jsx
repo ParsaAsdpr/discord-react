@@ -54,7 +54,7 @@ const FirstMessage = ({ message, authorID, attachment, time }) => {
 
   return (
     <div
-      className="mt-1 pl-[18px] hover:bg-[#00000010] pt-1 pb-0.5 relative"
+      className="mt-1 pl-[18px] hover:bg-[#00000010] pt-1 relative"
       onContextMenu={handleContextMenu}
     >
       {contextMneu.show && (
@@ -128,7 +128,7 @@ const FirstMessage = ({ message, authorID, attachment, time }) => {
             themeColor={user.themeColors}
           />
           <div
-            className={`w-screen h-screen fixed top-0 right-0 z-10 bg-black bg-opacity-80`}
+            className={`w-screen h-screen fixed top-0 right-0 z-40 bg-black bg-opacity-80`}
             onClick={handleProfileClicked}
           ></div>
         </>

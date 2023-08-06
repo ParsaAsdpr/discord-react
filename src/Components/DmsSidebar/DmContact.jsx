@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TfiClose } from "react-icons/tfi";
+import Status from "../common/Status";
 
 const DmContact = ({ name, avatar, id, status, customStatus }) => {
   const [isActive, setActive] = useState(false);
@@ -28,12 +29,13 @@ const DmContact = ({ name, avatar, id, status, customStatus }) => {
         className={`items-center flex flex-row gap-3 w-full text-stone-100 font-medium`}
         onClick={() => navigate(`/channels/@me/${id}`)}
       >
-        <span className="h-full">
+        <span className="h-full relative">
           <img
             className="rounded-full w-[32px] h-[32px]"
             alt="pfp"
             src={avatar}
           />
+          <Status status={status} className="top-[54%] -right-0.5" />
         </span>
         <div className="flex flex-col flex-grow gap-[3px]">
           <p className="overflow-ellipsis leading-none text-[16px] whitespace-nowrap overflow-hidden w-3/4">

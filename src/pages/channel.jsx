@@ -14,6 +14,7 @@ import { getUser } from "../Constants/MembersDataService";
 
 export default function Channel(props) {
   const { serverID, channelID } = useParams();
+  const [channel, setChannel] = useState()
   const user = getUser(channelID);
 
   const server = getServer(serverID);
@@ -22,6 +23,7 @@ export default function Channel(props) {
 
   useEffect(() => {
     setIsChannelChanged(true);
+    
   }, [channelID]);
 
   const navigateToChat = (newChatMessages) => {

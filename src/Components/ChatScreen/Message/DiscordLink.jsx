@@ -15,11 +15,11 @@ const DiscordLink = ({ link, author }) => {
           ? "YOU'VE BEEN INVITED TO JOIN A SERVER"
           : "YOU RECEIVED AN INVITE, BUT..."}
       </h4>
-      <div className="flex gap-1 items-center pt-4 w-full">
+      <div className="flex gap-1 items-center pt-2.5 w-full">
         <img
           src={invite ? invite.server.icon : "/invalidinvite.svg"}
           alt="invalid invite"
-          className="w-12 mr-3 rounded-xl"
+          className="w-[52px] mr-3 rounded-xl"
         />
         <div className="flex flex-col w-full pr-[70px] justify-center">
           <p
@@ -57,7 +57,7 @@ const DiscordLink = ({ link, author }) => {
               : "bg-[#5865F2] hover:bg-[#454fbd] px-3 "
           } transition py-2.5 rounded-[3px] font-semibold text-sm text-white`}
         >
-          {invite ? "Join" : "Mention"}
+          {invite ? "Joined" : "Mention"}
         </button>
       </div>
     </div>

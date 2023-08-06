@@ -95,7 +95,7 @@ const RolesGroup = ({ role }) => {
             themeColor={user.themeColors}
           />
           <div
-            className={`w-screen h-screen fixed top-0 right-0 z-10 bg-black bg-opacity-80`}
+            className={`w-screen h-screen fixed top-0 right-0 z-40 bg-black bg-opacity-80`}
             onClick={handleProfileClicked}
           ></div>
         </>

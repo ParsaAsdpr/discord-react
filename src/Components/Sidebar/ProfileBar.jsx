@@ -7,7 +7,7 @@ import ProfilePicture from "../common/ProfilePicture";
 
 const ProfileBar = ({ name,username, status, customStatus, avatar, dynamicAvatar }) => {
   return (
-    <div className="absolute bg-[#232428] right-0 translate-x-full w-[15rem] bottom-0 py-1.5 px-1.5 flex justify-between gap-3">
+    <div className="absolute bg-[#232428] right-0 translate-x-full w-[15rem] bottom-0 py-1.5 px-1.5 flex justify-between gap-3 z-50">
       <div className="flex gap-0.5 profile-bar hover:bg-white hover:bg-opacity-10 rounded-[4px] py-1 px-0.5 w-full cursor-pointer">
         <div className="h-full select-none relative rounded-full">
           <ProfilePicture staticUrl={avatar} dynamicUrl={dynamicAvatar} width={32} height={32} />
